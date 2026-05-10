@@ -1,0 +1,111 @@
+Interpretorul de la limbajele hibride ce transforma bytecode ul in cod masina se numeste masina virtuala
+
+bytecode ul poate fi transformat in cod masina prin 2 moduri:
+-compilare ahead of time(se ia tot bytecode ul si se transforma in cod masina dupa care codul masina este executat)
+-compilare JIT(just in time) - se ia bucati din bytecode si se transforma in cod masina in timpul rularii
+
+Limbaje hibride:
+-Java
+-Phyton
+-JavaScript
+-C#
+
+Editoare de text in mod text:
+
+-Vim- un editor de text folosit in linia de comanda, gasit pe majoritate sistemelor de operare Unix. 
+
+Editoare de text in interfata grafica:
+
+-Sublime Text- 
+
+Medii integrate de dezvoltare:
+
+-Microsoft Visual Studio si MonoDevelop - dedicat dezvoltarii in C/C++ si C#
+-Eclipse- pt. dezvoltarea de aplicatii Java
+-NetBeans- IDE cu sursa deschisa pentru Java
+-Xcode- IDE dezvoltat de Apple in principal de aplicatii pentru Ios si macOS, adaptat pt C, Objective-C si Swift.Objective C e un limbaj de programare ce extinde limbajul C, folosit la dezvoltarea  de aplicatii IOS si macOS.Swift este succesorul limbajului Objective-C.
+
+GCC- compilator al limbajului C/C++/Java 
+
+Node.js - mediu de dezvoltare al aplicatiilor JavaScript
+
+Git- un sistem de management si versionare a codului sursa care permite  partajarea unui proiect in cadrul unei echipe, proiectul este stochat intr un depozit(depository)
+
+ctrl+p(previous) - afiseaza comanda anterioara
+ctrl+n(next) - afiseaza comanda urmatoare
+ctrl+r - deschide un search bar in care cauti o comanda folosita anterior pentru a o folosi din nou
+
+comenzi interne(precizate in carte):
+-exit
+-cd
+-type
+
+Bootloader ul este programul care ruleaza imediat dupa Bios,are rolul de a ncarca sistemul de operare din memorie, in cazul x86 pe Linux cel mai folosit este GRUB,pe windows este unul proprietar, iar in cazul ARM este unul singur numit U-BOOT.
+
+Bootloadere pe arhitectura x86:
+GRUB-linux
+WinLoader- Windows
+Das U-Boot - ARM
+
+Pornind de la considerentele de mai sus, putem identifica două tipuri de drivere:
+• generice – sunt drivere care pot controla orice dispozitiv din aceeași categorie (de exemplu, un driver de placă de sunet poate funcționa cu orice placă de sunet, indiferent de producător). Acestea sunt, de obicei, dezvoltate de producătorii sistemului de operare pentru a oferi un nivel minim de funcționalitate.
+• specifice – sunt drivere dezvoltate de către vendorii/producătorii dispozitivelor și sunt dedicate fiecărui model sau fiecărei versiuni de hardware. Acestea oferă întreaga gamă de funcționalități suportate de componenta hardware respectivă.
+
+Partea de verificare a componentelor hardware de catre firmware de boot(bios) se numeste POST(Power-On Self Test)
+
+Firmware ul de boot vine pre-instalat pe placa de baza care contine si chip ul flash(chip ul flash e oarecum meomoria placi de baza, unde este Bios ul)
+
+Firmware-ul de boot permite efectuarea unor configurări la nivelul sistemului și al hardware-ului. Printre setările disponibile în firmware-ul de boot se numără:
+
+-stabilirea unei parole pentru protejarea meniului de configurare
+-configurarea orei și datei sistemului
+-activarea suportului hardware pentru virtualizare
+-setarea vitezei de acces la memorie
+-activarea pornirii de pe stick USB
+-configurarea ordinii de boot
+-activarea sau dezactivarea porturilor USB
+
+Modificarile facute in Bios sunt salvate intr o memorie speciala numita CMOS, fiind alimentat de o baterie dedicata, daca bateria este scoasa sau epuizata, se pierd configuratiile
+
+Schema de partionare a discurilor:
+-GPT(Guid Partition table) - UEFI
+-MBR(Master Boot Record) - Bios
+
+Dispozitivele de boot pot include hard disk-uri, stick-uri USB, unități CD-ROM sau chiar opțiuni de pornire prin rețea, utilizând PXE (Preboot eXecution Environment).
+
+Secure Boot este o tehnică menită să asigure securitatea firmware-ului de boot și a celorlalte componente implicate în procesul de pornire. Aceasta stochează semnătura acestor componente și, la inițierea sistemului, verifică dacă ele sunt valide și nealterate.
+
+Bootloaderul este o componentă software care încarcă sistemul de operare și oferă utilizatorului posibilitatea de a selecta sistemul de operare dorit, precum și de a configura opțiunile de pornire ale acestuia.
+
+Comanda xxd este un utilitar folosit pentru a afișa conținutul unui fișier sau al unui dispozitiv în format hexazecimal (hex dump). Este foarte utilă când vrei să vezi exact datele brute, la nivel de octeți.
+
+În exemplul dat:
+
+sudo xxd -l 512 /dev/sda
+
+înseamnă:
+
+sudo – rulează comanda cu drepturi de administrator (necesar pentru acces la disc)
+xxd – programul care face afișarea în format hexazecimal
+-l 512 – limitează afișarea la primii 512 octeți
+/dev/sda – reprezintă primul hard disk
+
+Rezultatul afișează:
+
+în stânga: adresa (offset-ul) în fișier/disc
+în mijloc: valorile în hexazecimal
+în dreapta: reprezentarea ASCII (dacă este posibil)
+
+Exemplu:
+
+000001f0: ... 55aa
+
+Ultimii doi octeți 55 aa reprezintă semnătura specifică unui sector de boot valid.
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+comanda make pentru a compila sursele si a obtine fisierele executabile si bibliotecile dorite(make este un sistem de build-compileaza si automatizeaza procesul pt ca calculatorul sa inteleaga codul prin 1 si 0)
+grep - cauta sirul primit ca argument in fisierul dat ca al doilea argument
+        ls:
+-l → long listing
+
+-a → arată fișiere ascunse
+
+-h → dimensiuni human readable (K)
+
+ps -f(full) - afiseaza procesele in format complet
+ps -e(everything) - afiseaza toate procesele
+ps -o pid,ppid,user,rss, %cpu - afiseaza atributele procesului(cat la suta foloseste din procesor,numar unic etc.)
+ps -u student - listarea proceselor ce apartin utilizatorului student
+ps -u -N student -listarea proceselor ce nu apartin utilizatorului student
+ps -u student -o %cpu pid ppid cmd rss etc. - afisarea atributele specificate pentru procesele ce apartin utilizatorului student(cmd= comenzi de pornire, rss=memorie utilizata de proces)
+ps -C <nume program> - afisarea proceselor ce au ca imagine acel program
+un proces cu prioritate mai buna va avea mai repede acces la memorie(resurse)
+ps - o pid,cmd,%cpu,rss --sort -%cpu - sortarea proceselor dupa procentul de procesor acaparat
+ps -o pid -C <nume program> - afisarea pid proceselor acelui program
+ps -o pid -u student - -----------------------,,-------------utilizator
+ps -o pid= - dezactiveaza afisarea header-ului( acelasi lucru se poate obtine cu pgrep)
+inainte de a preciza utilizatorul se pune " -u "
+pstree -p - optiunea p face ca sa se afiseze si pid urile proceselor
+lsof -p <PID> - optiunea p selecteaza procesul cu pid ul precizat(daca facem lsof PID va cauta fisierul numit PID)
+
+nice - Pentru a modifica prioritatea unui proces la pornire (load-time)
+renice - Pentru a modifica prioritatea unui proces la rulare (run-time)
+& - trimite procesul in background
+sudo nice - pentru a putea scadea valoarea nice in caz de nu suntem un utilizator privilegiat
+jobs - afiseaza joburile din shellul curent,adica procesele care se gasesc in background
+ctrl+z - duce procesul in background suspendat(stopped)
+ctrl+c - intrerupe procesul
+ctrl+d - inchide terminalul
+fg - readuce programul in foreground
+bg - folosit pentru a duce un proces din starea de suspendat in starea de running(stopped - running)
+%1, &2 etc. - pentru a opera cu joburile(procesele) cu index ul 1,2(cele ce apar [1], [2]...)
+
+in linux tabelul de descriptori este limitat si are 1024 de intrari
+
+echo ?$ - afiseaza codul de iesire al unui proces
+
+SIGSTOP(un semnal) - suspenda un proces
+SIGTERM            - omoara un proces
+kill -l - afiseaza lista tuturor semnalelor
+pkill - comanda pentru a trimite semnale mai multor procese
+
+Semnalele SIGQUIT și SIGINT au rol similar, diferența fiind că semnalul SIGQUIT (transmis folosind combinația de taste Ctrl+\) este mai puternic decât semnalul SIGINT (transmis folosind combinația de taste Ctrl+C).
+„Mai puternic” înseamnă că pot exista procese care ignoră semnalul SIGINT, dar nu ignoră semnalul SIGQUIT.
+
+>	suprascrie fișierul cu output-ul comenzii	echo "Salut" > fisier.txt → dacă fișierul exista, tot ce era în el se șterge
+>>	adaugă la final output-ul comenzii	echo "Salut" >> fisier.txt → textul se adaugă la final, fișierul nu se șterge
+
+tty- indica terminalul curent pentru un shell
+
+Prezența bitului setuid pe un executabil deținut de root (de exemplu: passwd, su, sudo) înseamnă că acele comenzi pot fi rulate de orice utilizator pentru a crea procese privilegiate.
+UID=PID(tot un numar unic de identificare doar ca pentru utilizatori)
+stat(comanda) - afiseaza UID ul unui fisier(ce utilizator detine acel fisier)
+
+/etc/passwd - fisierul unde se gasesc baza de date pt parole(utilizatori)
+
+
+
+
